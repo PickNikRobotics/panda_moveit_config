@@ -10,7 +10,6 @@
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
     <group name="panda_arm">
-        <joint name="virtual_joint" />
         <joint name="panda_joint1" />
         <joint name="panda_joint2" />
         <joint name="panda_joint3" />
@@ -38,7 +37,7 @@
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="eef" parent_link="panda_link8" group="hand" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
-    <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="panda_link0" />
+    <virtual_joint name="virtual_joint" type="floating" parent_frame="world" child_link="panda_link0" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="panda_hand" link2="panda_leftfinger" reason="Adjacent" />
     <disable_collisions link1="panda_hand" link2="panda_link3" reason="Never" />
