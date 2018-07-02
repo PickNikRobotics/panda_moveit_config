@@ -121,7 +121,10 @@ planner_configs:
     dense_delta_fraction: 0.001  # delta fraction for interface detection. default: 0.001
     max_failures: 5000  # maximum consecutive failure limit. default: 5000
   TrajOptDefault:
+    plugin: ompl_interface/TrajOptPlanningContext # Fully qualified name of the plugin.
     type: geometric::TrajOpt
+    range: 0.0 # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()
+    safety_distance: 0.01 # Distance at which penalities start to occur.
 
 panda_arm:
   planner_configs:
